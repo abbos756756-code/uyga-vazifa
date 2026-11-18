@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ==========================================================
+   RANG-BARANG JONLI ORQA FON (ANIMATSIYALI GRADIENT)
+   ========================================================== */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #7928ca, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==========================================================
+   O'ZGACHA STRUKTURALI ASOSIY KARTA (MODERN CARD)
+   ========================================================== */
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 32px;
+    padding: 38px 32px;
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.25),
+        0 0 40px rgba(231, 60, 126, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 30px 70px rgba(0, 0, 0, 0.3),
+        0 0 50px rgba(231, 60, 126, 0.35);
+}
+
+/* ==========================================================
+   TIL TUGMALARI (SEGMENTED PILL SWITCHER)
+   ========================================================== */
+.lang-buttons {
+    display: inline-flex;
+    background: #f1f3f9;
+    padding: 6px;
+    border-radius: 50px;
+    gap: 6px;
+    margin-bottom: 24px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.lang-btn {
+    background: transparent;
+    color: #64748b;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-btn:hover {
+    color: #1e293b;
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #7928ca 0%, #e73c7e 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(231, 60, 126, 0.4);
+    transform: scale(1.02);
+}
+
+/* ==========================================================
+   SARLAVHA (GRADIENT MATN)
+   ========================================================== */
+#site-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    background: linear-gradient(135deg, #1e293b 0%, #7928ca 50%, #e73c7e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================================
+   KONTENT BLOKI (ICHKI AKSENTLI KARTA STRUKTURASI)
+   ========================================================== */
+.content {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(241, 245, 249, 0.8), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 24px 20px;
+    margin-bottom: 26px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 4px 15px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #7928ca, #e73c7e, #23a6d5);
+}
+
+#greeting {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+}
+
+/* ==========================================================
+   ASOSIY TUGMA (FULL-WIDTH GRADIENT BUTTON)
+   ========================================================== */
+.main-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #7928ca 0%, #e73c7e 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    padding: 15px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 25px rgba(231, 60, 126, 0.4);
+}
+
+.main-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(231, 60, 126, 0.55);
+    background: linear-gradient(135deg, #6c20b8 0%, #d82b6e 100%);
+}
+
+.main-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(231, 60, 126, 0.4);
+}
+
+/* ==========================================================
+   MOBIL MOSLASHUVCHANLIK
+   ========================================================== */
+@media (max-width: 480px) {
+    .card {
+        padding: 30px 20px;
+        border-radius: 26px;
+    }
+
+    #site-title {
+        font-size: 23px;
+    }
+
+    #greeting {
+        font-size: 20px;
+    }
+
+    #description {
+        font-size: 14px;
+    }
+
+    .lang-btn {
+        padding: 7px 16px;
+        font-size: 13px;
+    }
+}
